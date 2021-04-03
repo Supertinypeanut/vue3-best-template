@@ -1,16 +1,16 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const scssVariable2js = require('./scssVariabel2js')
+const lessVariable2js = require('./lessVariabel2js')
 
-const variable = scssVariable2js('./src/assets/variable.scss')
+const variable = lessVariable2js('./src/assets/styles/variables.less')
 
 module.exports = {
 	publicPath: process.env.VUE_APP_PROJECT_PATH,
 	css: {
 		loaderOptions: {
-			sass: {
-				sassOptions: {
+			less: {
+				lessOptions: {
 					javascriptEnabled: true,
 					modifyVars: variable,
 				},
@@ -25,8 +25,11 @@ module.exports = {
 	},
 	pluginOptions: {
 		'style-resources-loader': {
-			preProcessor: 'scss',
-			patterns: [path.resolve(__dirname, 'src/styles/variable.scss')], // 引入全局样式变量
+			preProcessor: 'less',
+			patterns: [
+				path.resolve(__dirname, 'src/assets/styles/variables.less'),
+				path.resolve(__dirname, 'src/assets/styles/mixin.less'),
+			], // 引入全局样式变量
 		},
 	},
 	devServer: {

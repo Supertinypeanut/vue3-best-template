@@ -7,7 +7,6 @@
 			</transition>
 		</template>
 	</router-view>
-	<div class="t"></div>
 </template>
 
 <script lang="ts">
@@ -33,9 +32,3 @@ export default defineComponent({
 	},
 })
 </script>
-
-<style lang="scss" scoped>
-.t {
-	// background-color: $warning-color;
-}
-</style>

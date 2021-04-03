@@ -69,7 +69,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="less">
 a {
 	color: #42b983;
 }
@@ -80,7 +80,7 @@ label {
 }
 
 code {
-	background-color: #eee;
+	background-color: @white-color;
 	padding: 2px 4px;
 	border-radius: 4px;
 	color: #304455;
